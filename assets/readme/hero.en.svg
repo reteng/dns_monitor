@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420"
+     viewBox="0 0 1200 420" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">DNS Resolution Monitor</title>
+  <desc id="heroDesc">Dark banner: project name and one-line description on the left, verdict legend at top right (Alert, Changed, OK), and a sample live monitoring table below with anomaly rows on red and changed rows on yellow.</desc>
+
+  <defs>
+    <clipPath id="panelClip">
+      <rect x="64" y="232" width="1072" height="166" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="420" rx="26" fill="#0B1220"/>
+
+  <!-- Title block: platform / dependencies, project name, one-liner, config & log paths -->
+  <g id="title-block"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+    <text x="64" y="76" font-size="17" fill="#5E7BA9" letter-spacing="1.6"
+          font-family="ui-monospace, SFMono-Regular, Consolas, monospace">WINDOWS SERVER 2016 · PYTHON STANDARD LIBRARY · ZERO DEPENDENCIES</text>
+    <text x="64" y="140" font-size="52" font-weight="700" fill="#F4F8FF"
+          letter-spacing="0.5">DNS Resolution Monitor</text>
+    <text x="64" y="184" font-size="21" fill="#94A8C7">Continuously monitors DNS resolution — anomalies highlighted live and logged to disk</text>
+    <text x="64" y="216" font-size="17" fill="#55709C"
+          font-family="ui-monospace, SFMono-Regular, Consolas, monospace">config.json · logs\dns_monitor_*.log · logs\dns_error_*.log</text>
+  </g>
+
+  <!-- Verdict legend: matches the row-highlight rules in gui.py -->
+  <g id="legend"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+    <text x="1136" y="100" text-anchor="end" font-size="17" fill="#5E7BA9"
+          letter-spacing="1.2"
+          font-family="ui-monospace, SFMono-Regular, Consolas, monospace">VERDICT LEVELS</text>
+    <rect x="860" y="112" width="76" height="36" rx="18" fill="#FFD6D6"/>
+    <text x="898" y="135" text-anchor="middle" font-size="18" fill="#B00020">Alert</text>
+    <rect x="946" y="112" width="104" height="36" rx="18" fill="#FFF4CC"/>
+    <text x="998" y="135" text-anchor="middle" font-size="18" fill="#7A5C00">Changed</text>
+    <rect x="1060" y="112" width="76" height="36" rx="18" fill="#1B2740"/>
+    <text x="1098" y="135" text-anchor="middle" font-size="18" fill="#A9BBD8">OK</text>
+  </g>
+
+  <!-- Record table: real headers and record format, row highlights match the app -->
+  <g id="record-table">
+    <rect x="64" y="232" width="1072" height="166" rx="12"
+          fill="#F7F9FC" stroke="#D8E0EC"/>
+
+    <g clip-path="url(#panelClip)">
+      <rect x="64" y="309" width="1072" height="28" fill="#FFF4CC"/>
+      <rect x="64" y="309" width="4" height="28" fill="#F2C14E"/>
+      <rect x="64" y="337" width="1072" height="28" fill="#FFD6D6"/>
+      <rect x="64" y="337" width="4" height="28" fill="#FF6B6B"/>
+      <rect x="64" y="365" width="1072" height="28" fill="#FFD6D6"/>
+      <rect x="64" y="365" width="4" height="28" fill="#FF6B6B"/>
+    </g>
+
+    <g id="table-head"
+       font-family="ui-monospace, SFMono-Regular, Consolas, monospace"
+       font-size="17" fill="#7A8AA5" letter-spacing="0.6">
+      <text x="84" y="264">Time</text>
+      <text x="192" y="264">Domain</text>
+      <text x="392" y="264">DNS Server</text>
+      <text x="522" y="264">Result</text>
+      <text x="1116" y="264" text-anchor="end">Status</text>
+    </g>
+    <line x1="84" y1="276" x2="1116" y2="276" stroke="#E1E8F2"/>
+
+    <!-- OK -->
+    <g font-size="19" fill="#2A3648"
+       font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+      <text x="84" y="302" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">12:00:33</text>
+      <text x="192" y="302">example.com</text>
+      <text x="392" y="302" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">223.5.5.5</text>
+      <text x="522" y="302" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">36.152.44.93, 36.152.44.132</text>
+    </g>
+    <rect x="1048" y="283" width="68" height="26" rx="6" fill="#E8EEF7"/>
+    <text x="1082" y="302" text-anchor="middle" font-size="18" fill="#4A5A72"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">OK</text>
+
+    <!-- Changed -->
+    <g font-size="19" fill="#7A5C00"
+       font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+      <text x="84" y="330" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">12:00:33</text>
+      <text x="192" y="330">cdn.example.com</text>
+      <text x="392" y="330" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">223.5.5.5</text>
+      <text x="522" y="330" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">36.152.44.132</text>
+    </g>
+    <rect x="1020" y="311" width="96" height="26" rx="6" fill="#F0C64B"/>
+    <text x="1068" y="330" text-anchor="middle" font-size="18" fill="#3D2E00"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">Changed</text>
+
+    <!-- NXDOMAIN -->
+    <g font-size="19" fill="#B00020"
+       font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+      <text x="84" y="358" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">12:00:33</text>
+      <text x="192" y="358">gone.example.com</text>
+      <text x="392" y="358" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">223.5.5.5</text>
+      <text x="522" y="358" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">NXDOMAIN</text>
+    </g>
+    <rect x="1002" y="339" width="114" height="26" rx="6" fill="#B00020"/>
+    <text x="1059" y="358" text-anchor="middle" font-size="18" fill="#FFFFFF"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">NXDOMAIN</text>
+
+    <!-- IP mismatch -->
+    <g font-size="19" fill="#B00020"
+       font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+      <text x="84" y="386" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">12:00:34</text>
+      <text x="192" y="386">example.com</text>
+      <text x="392" y="386" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">8.8.8.8</text>
+      <text x="522" y="386" font-size="18"
+            font-family="ui-monospace, SFMono-Regular, Consolas, monospace">1.2.3.4 not in expected list</text>
+    </g>
+    <rect x="994" y="367" width="122" height="26" rx="6" fill="#B00020"/>
+    <text x="1055" y="386" text-anchor="middle" font-size="18" fill="#FFFFFF"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">IP mismatch</text>
+  </g>
+</svg>
